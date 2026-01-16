@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="users.html" class="active">Users</a>
+    <a href="products.html">Products</a>
+    <a href="clients.html">Clients</a>
+    <a href="orders.html">Orders</a>
+    <a href="invoices.html">Invoices</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar">
+      <h3>Users</h3>
+      <button class="logout" onclick="logout()">Déconnexion</button>
+    </div>
+
+    <!-- Button -->
+    <button onclick="showForm()">Ajouter User</button>
+
+    <!-- Form -->
+    <form id="userForm" style="display:none;">
+      <input type="hidden" id="userId">
+
+      <input type="text" id="name" placeholder="Nom" required>
+      <input type="email" id="email" placeholder="Email" required>
+
+      <select id="role" required>
+        <option value="Admin">Admin</option>
+        <option value="Client">Client</option>
+      </select>
+
+      <button type="submit">Enregistrer</button>
+    </form>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="usersTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js" defer></script>
+  <script src="users.js" defer></script>
+
+</body>
+</html>

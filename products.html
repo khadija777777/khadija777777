@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="users.html">Users</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="clients.html">Clients</a>
+    <a href="orders.html">Orders</a>
+    <a href="invoices.html">Invoices</a>
+  </div>
+
+  <div class="main-content">
+    <div class="navbar">
+      <h3>Products</h3>
+      <button class="logout" onclick="logout()">Déconnexion</button>
+    </div>
+
+    <input type="text" id="search" placeholder="Search product..." onkeyup="filterProducts()">
+
+    <button onclick="showForm()">Ajouter Product</button>
+
+    <form id="productForm" style="display:none;">
+      <input type="hidden" id="productId">
+      <input type="text" id="productName" placeholder="Name" required>
+      <input type="number" id="productPrice" placeholder="Price" required>
+      <input type="number" id="productStock" placeholder="Stock" required>
+      <button type="submit">Enregistrer</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th onclick="sortBy('name')">Name</th>
+          <th onclick="sortBy('price')">Price</th>
+          <th onclick="sortBy('stock')">Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productsTable"></tbody>
+    </table>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>

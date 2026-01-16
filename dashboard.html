@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="users.html">Users</a>
+    <a href="products.html">Products</a>
+    <a href="clients.html">Clients</a>
+    <a href="orders.html">Orders</a>
+    <a href="invoices.html">Invoices</a>
+    <button class="logout" onclick="logout()">Déconnexion</button>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <h2>Tableau de Bord</h2>
+
+    <!-- CARDS -->
+    <div class="cards">
+      <div class="card">
+        <h4>USERS</h4>
+        <p id="usersCount">0</p>
+      </div>
+
+      <div class="card">
+        <h4>PRODUCTS</h4>
+        <p id="productsCount">0</p>
+      </div>
+
+      <div class="card">
+        <h4>ORDERS</h4>
+        <p id="ordersCount">0</p>
+      </div>
+
+      <div class="card">
+        <h4>REVENUE</h4>
+        <p id="revenue">0 DH</p>
+      </div>
+    </div>
+
+    <!-- CIRCLES CENTERED & BIGGER -->
+    <div style="
+      margin-top:40px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:30px;
+    ">
+
+      <div class="card" style="width:420px;">
+        <canvas id="usersChart"></canvas>
+      </div>
+
+      <div class="card" style="width:420px;">
+        <canvas id="revenueCircle"></canvas>
+      </div>
+
+    </div>
+
+    <!-- REVENUE LINE GRAPH -->
+    <div class="card" style="margin-top:40px;">
+      <h3>Revenue Evolution</h3>
+      <canvas id="revenueChart"></canvas>
+    </div>
+
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

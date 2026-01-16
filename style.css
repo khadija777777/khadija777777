@@ -1,0 +1,319 @@
+/* --- Reset Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff0f5; /* Pastel lavande / rose clair */
+    color: #4b3b4f;
+}
+
+/* --- Login Page --- */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #fff0f5;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,182,193,0.3);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #c71585;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #f4c2c2;
+    border-radius: 10px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background: #ff85c1;
+}
+
+/* --- Dashboard Layout --- */
+body.dashboard, body.dashboard-body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fffafa;
+    color: #4b3b4f;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 240px;
+    background: #ffb6c1; /* Rose pastel */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    border-radius: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #8b008b;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: #ff69b4;
+    font-weight: bold;
+    transform: translateX(5px);
+}
+
+/* --- Logout Button --- */
+.logout-btn, .navbar .logout {
+    background: #ff1493;
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover, .navbar .logout:hover {
+    background: #c71585;
+}
+
+/* --- Main Content --- */
+.main-content {
+    margin-left: 240px;
+    padding: 2rem;
+    width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ffeff5;
+}
+
+.navbar h3 {
+    color: #c71585;
+    font-size: 1.8rem;
+}
+
+.user-info {
+    font-weight: 600;
+    color: #db7093;
+}
+
+/* --- Cards --- */
+.cards-container, .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    color: #db7093;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Charts --- */
+.charts, .charts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.chart-box, canvas {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+/* --- Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff0f5;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+table th, table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ffc0cb;
+    text-align: left;
+}
+
+table th {
+    background: #ff69b4;
+    color: #fff;
+}
+
+button {
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.edit { background: #ffb6c1; color: #fff; }
+button.delete { background: #ff1493; color: #fff; }
+button.details { background: #db7093; color: #fff; }
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* --- Forms --- */
+form input, form select {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ffc0cb;
+}
+
+form button {
+    background: #ff69b4;
+    color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #ff85c1;
+}
+
+/* --- Search Inputs --- */
+input[type="text"], input[type="number"], input[type="email"], input[type="date"] {
+    border: 1px solid #ffc0cb;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 80px;
+        padding: 2rem 0.5rem;
+    }
+    .sidebar h2, .sidebar a span {
+        display: none;
+    }
+    .main-content {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body.dashboard, body.dashboard-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: space-around;
+        padding: 1rem 0.5rem;
+    }
+
+    .sidebar a {
+        flex: 1;
+        text-align: center;
+        margin: 0 0.2rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .chart-box, canvas {
+        height: 300px;
+    }
+}

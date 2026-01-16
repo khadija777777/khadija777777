@@ -1,0 +1,21 @@
+<body onload="loadDetails()">
+
+<h1>Details</h1>
+<div id="details"></div>
+
+<button onclick="downloadPDF()">Export PDF</button>
+
+<script src="utils.js"></script>
+<script>
+function loadDetails() {
+  const item = JSON.parse(localStorage.getItem("details"));
+  details.innerHTML = Object.entries(item)
+    .map(([k,v]) => `<p><b>${k}</b>: ${v}</p>`)
+    .join("");
+}
+
+function downloadPDF() {
+  exportPDF("Details", details.innerText);
+}
+</script>
+</body>

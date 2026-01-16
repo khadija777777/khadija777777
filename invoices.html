@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoices | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="users.html">Users</a>
+    <a href="products.html">Products</a>
+    <a href="clients.html">Clients</a>
+    <a href="orders.html">Orders</a>
+    <a href="invoices.html" class="active">Invoices</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main-content">
+    <div class="navbar">
+      <h3>Invoices Management 🧾</h3>
+      <button class="logout" onclick="logout()">Déconnexion</button>
+    </div>
+
+    <!-- Search -->
+    <input
+      type="text"
+      id="search"
+      placeholder="Search invoices..."
+      onkeyup="filterInvoices()"
+    >
+
+    <!-- ✅ FORM OBLIGATOIRE -->
+    <form id="invoiceForm">
+      <input type="text" id="clientName" placeholder="Client Name" required>
+      <input type="number" id="orderId" placeholder="Order ID" required>
+      <input type="number" id="amount" placeholder="Amount" required>
+      <input type="date" id="date" required>
+
+      <!-- ✅ BOUTON SUBMIT (IMPORTANT) -->
+      <button type="submit">Add Invoice</button>
+    </form>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Client</th>
+          <th>Order ID</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="invoicesTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js" defer></script>
+  <script src="invoices.js" defer></script>
+
+</body>
+</html>

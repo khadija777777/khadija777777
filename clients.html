@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="users.html">Users</a>
+    <a href="products.html">Products</a>
+    <a href="clients.html" class="active">Clients</a>
+    <a href="orders.html">Orders</a>
+    <a href="invoices.html">Invoices</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar">
+      <h3>Clients</h3>
+      <button class="logout" onclick="logout()">Déconnexion</button>
+    </div>
+
+    <!-- Search -->
+    <input
+      type="text"
+      id="search"
+      placeholder="Search client..."
+      onkeyup="filterClients()"
+    >
+
+    <!-- Button AJOUT (CORRIGÉ) -->
+    <button type="button" onclick="showForm()">Ajouter Client</button>
+
+    <!-- Form (CACHÉ AU DÉPART) -->
+    <form id="clientForm" style="display:none;">
+      <input type="hidden" id="clientId">
+
+      <input type="text" id="clientName" placeholder="Nom" required>
+      <input type="email" id="clientEmail" placeholder="Email" required>
+      <input type="text" id="clientPhone" placeholder="Téléphone" required>
+      <input type="text" id="clientAddress" placeholder="Adresse" required>
+
+      <button type="submit">Enregistrer</button>
+    </form>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="clientsTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js" defer></script>
+  <script src="clients.js" defer></script>
+
+</body>
+</html>

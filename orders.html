@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Orders | MyManager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard" onload="protect()">
+
+  <div class="sidebar">
+    <h2>🌸 My Flowers</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="users.html">Users</a>
+    <a href="products.html">Products</a>
+    <a href="clients.html">Clients</a>
+    <a href="orders.html" class="active">Orders</a>
+    <a href="invoices.html">Invoices</a>
+  </div>
+
+  <div class="main-content">
+    <h3>Orders</h3>
+
+    <!-- ✅ FORM AVEC IDS CORRECTS -->
+    <form id="orderForm">
+      <input type="text" id="orderClient" placeholder="Client" required>
+      <input type="text" id="orderProduct" placeholder="Product" required>
+      <input type="number" id="orderQuantity" placeholder="Quantity" required>
+      <input type="number" id="orderPrice" placeholder="Price" required>
+
+      <button type="submit">Add Order</button>
+    </form>
+
+    <!-- TABLE -->
+    <table>
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTable"></tbody>
+    </table>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>
